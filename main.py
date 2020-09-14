@@ -374,7 +374,7 @@ if os.path.exists("N_L.txt"):
     os.remove("N_L.txt")
 
 # variable containing the location of the folder where images are stored
-image_folder = '/home/dirkjan/Dropbox/Doutoramento/Processing/T2360RS7xxx/wirefinder/'
+image_folder = '/images/'
 
 # the following variables are used to count which square/sample is being worked on
 # counts the total number of wires contacted
@@ -390,8 +390,8 @@ line_number_new = 1
 line_number_old = 1
 
 # extra variables used for the image folder
-f = 71
-folder = str(f) + 'xx/'
+f = 1
+folder = 'str(f)'
 # picture names are written as P1010001.JPG, where 1010001 increments by one every picture
 pic = 10001
 
@@ -450,13 +450,11 @@ for idx in range(144):
     pic += 1
     # if we reach the last device site we reset the counting variables and increment the sample number
     if device_site_number == 36:
-        f += 1
         sample_number = 0
         column_number = 0
         line_number_new = 1
         line_number_old = 1
         sample_number += 1
-        if f == 80:
-            f = 710
-        folder = str(f) + 'xx/'
+        f += 1
+        folder = str(f)
         pic = 10001
